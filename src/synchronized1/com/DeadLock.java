@@ -33,7 +33,7 @@ public class DeadLock
 		{
 			public void run()
 			{
-				synchronized(s)
+				synchronized(s1)
 				{
 					System.out.println("Thread 2 aquires resource 1..");
 				}
@@ -46,14 +46,13 @@ public class DeadLock
 				{
 					System.out.println(e);
 				}
-				synchronized(s1)
+				synchronized(s)
 				{
 					System.out.println("Thread 2 aquires resource 2..");
 				}
 			}
 		};
 		t.start();
-		t.join();
 		t1.start();
 	}
 }

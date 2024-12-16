@@ -43,7 +43,7 @@ public class DeadLockOccures {
 			public void run()
 			{
 				System.out.println("Thread 2..");
-				synchronized(str2)
+				synchronized(str1)
 				{
 					System.out.println("Thread 2 aquires the lock of str2..");
 					try
@@ -54,7 +54,7 @@ public class DeadLockOccures {
 					{
 						e.printStackTrace();
 					}
-					synchronized(str1)
+					synchronized(str2)
 					{
 						System.out.println("Thread 2 aquires the lock of str1..");
 						try
